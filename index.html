@@ -1,0 +1,757 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Soil Doctor — Know your soil. Grow more with less.</title>
+  <meta name="description" content="Soil Doctor by Ekosight tests 18 soil parameters on your field in 45–60 minutes and turns the results into crop advice in your language. Soil testing, Soil Doctor Clinics, the Soil Didi program and a soil intelligence platform.">
+  <meta name="theme-color" content="#2B1B12">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3CclipPath id='c'%3E%3Ccircle cx='32' cy='32' r='30'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23c)'%3E%3Crect width='64' height='24' fill='%239ED6F2'/%3E%3Crect y='24' width='64' height='12' fill='%23A6CF55'/%3E%3Crect y='36' width='64' height='14' fill='%238A5A3B'/%3E%3Crect y='50' width='64' height='14' fill='%235B3D28'/%3E%3C/g%3E%3Cpath d='M8 30h16l4-8 4 18 4-12h20' fill='none' stroke='%23fff' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..800,50..100;1,9..144,300..800,50..100&family=Jost:wght@400;500;600;700&family=Mukta:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- ============ SVG SPRITE ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <clipPath id="logoClip"><circle cx="32" cy="32" r="30"/></clipPath>
+  </defs>
+  <symbol id="logo-mark" viewBox="0 0 64 64">
+    <g clip-path="url(#logoClip)">
+      <rect width="64" height="24" fill="#9ED6F2"/>
+      <rect y="24" width="64" height="12" fill="#A6CF55"/>
+      <rect y="36" width="64" height="14" fill="#8A5A3B"/>
+      <rect y="50" width="64" height="14" fill="#5B3D28"/>
+      <path d="M0 24h64M0 36h64M0 50h64" stroke="#fff" stroke-width="1.6"/>
+    </g>
+    <path d="M7 30h17l4-8 4 18 4-12h21" fill="none" stroke="#fff" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 6h18v12H3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m3 7 9 6 9-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="currentColor"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 20-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m8.5 14-1.5 8 5-3 5 3-1.5-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <!-- phase icons -->
+  <symbol id="ph-diagnose" viewBox="0 0 120 120"><rect x="30" y="18" width="60" height="84" rx="12" fill="none" stroke="currentColor" stroke-width="5"/><rect x="40" y="30" width="40" height="26" rx="5" fill="currentColor" opacity=".25"/><path d="M44 46h8l4-8 5 14 4-6h11" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="48" cy="74" r="6" fill="currentColor"/><circle cx="72" cy="74" r="6" fill="none" stroke="currentColor" stroke-width="4"/><path d="M42 90h36" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></symbol>
+  <symbol id="ph-advise" viewBox="0 0 120 120"><path d="M18 28h84v54H58l-22 18V82H18z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/><path d="M60 72c0-16 8-26 22-28-2 14-10 24-22 28zM60 72c-2-10-8-16-18-18 0 10 6 16 18 18z" fill="currentColor" opacity=".85"/></symbol>
+  <symbol id="ph-monitor" viewBox="0 0 120 120"><path d="M18 100V20M18 100h86" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M28 84l20-18 16 10 26-34" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="90" cy="42" r="7" fill="currentColor"/><path d="M28 92h10M46 92h10M64 92h10M82 92h10" stroke="currentColor" stroke-width="3" opacity=".5"/></symbol>
+  <symbol id="ph-empower" viewBox="0 0 120 120"><circle cx="42" cy="38" r="12" fill="none" stroke="currentColor" stroke-width="5"/><circle cx="80" cy="44" r="10" fill="currentColor" opacity=".35"/><path d="M20 96c2-20 12-32 22-32s20 12 22 32" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M62 96c2-16 9-26 18-26s16 10 18 26" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M60 22c0-8 6-12 12-12-1 7-5 11-12 12z" fill="currentColor"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ PRELOADER ============ -->
+<div class="loader" aria-hidden="true">
+  <div class="loader__core">
+    <span class="loader__band" style="--i:0;--c:#9ED6F2"></span>
+    <span class="loader__band" style="--i:1;--c:#A6CF55"></span>
+    <span class="loader__band" style="--i:2;--c:#8A5A3B"></span>
+    <span class="loader__band" style="--i:3;--c:#5B3D28"></span>
+    <svg class="loader__pulse" viewBox="0 0 64 64"><path d="M7 30h17l4-8 4 18 4-12h21" fill="none" stroke="#fff" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round" pathLength="1"/></svg>
+  </div>
+  <p class="loader__word">Reading the soil…</p>
+</div>
+
+<!-- ============ ROOT PROGRESS ============ -->
+<div class="root-progress" aria-hidden="true"><span></span></div>
+
+<!-- ============ HEADER ============ -->
+<header class="nav" id="top">
+  <div class="nav__inner">
+    <a href="#top" class="brand" aria-label="Soil Doctor home">
+      <svg class="brand__mark"><use href="#logo-mark"/></svg>
+      <span class="brand__text"><b>Soil Doctor</b><small>by ekosight</small></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#how" data-i18n="nav.how">How it works</a>
+      <a href="#parameters" data-i18n="nav.test">The test</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#paths" data-i18n="nav.paths">For you</a>
+      <a href="#story" data-i18n="nav.story">Our story</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="lang" type="button" aria-label="Switch language / भाषा बदलें" data-lang-toggle>
+        <span data-l="en">EN</span><span data-l="hi">हिं</span>
+      </button>
+      <a href="#book" class="btn btn--ink btn--sm magnetic" data-i18n="cta.book">Book a soil test</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" hidden>
+  <div class="mobile-menu__layers" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <nav aria-label="Mobile">
+    <a href="#how" data-i18n="nav.how">How it works</a>
+    <a href="#parameters" data-i18n="nav.test">The test</a>
+    <a href="#services" data-i18n="nav.services">Services</a>
+    <a href="#paths" data-i18n="nav.paths">For you</a>
+    <a href="#story" data-i18n="nav.story">Our story</a>
+    <a href="#faq">FAQ</a>
+    <a href="#book" data-i18n="cta.book">Book a soil test</a>
+  </nav>
+</div>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="heroTitle">
+  <div class="hero__grain" aria-hidden="true"></div>
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow" data-reveal><span class="dot dot--leaf"></span><span data-i18n="hero.eyebrow">On-field soil testing · Crop advisory · Soil Didis</span></p>
+      <h1 id="heroTitle" class="hero__title">
+        <span class="line"><span data-i18n="hero.t1">Know your soil.</span></span>
+        <span class="line"><em data-i18n="hero.t2">Grow more with less.</em></span>
+      </h1>
+      <p class="hero__lede" data-reveal data-i18n="hero.lede">Soil Doctor tests 18 soil parameters right on your field in 45–60 minutes, then turns the results into crop advice in your language — so you spend less on fertiliser and get more from every acre.</p>
+      <div class="hero__ctas" data-reveal>
+        <a href="#book" class="btn btn--ink magnetic"><span data-i18n="cta.book">Book a soil test</span><svg class="ic"><use href="#i-arrow"/></svg></a>
+        <a href="#paths" class="btn btn--line magnetic" data-path-link="partners"><span data-i18n="cta.clinic">Start a Soil Doctor Clinic</span></a>
+      </div>
+      <ul class="hero__trust" data-reveal>
+        <li><svg class="ic"><use href="#i-award"/></svg><span>Grassroot Innovator Award · Rashtrapati Bhawan 2026</span></li>
+        <li><svg class="ic"><use href="#i-pin"/></svg><span>Pusa Krishi, ICAR-IARI, New Delhi</span></li>
+      </ul>
+    </div>
+
+    <div class="hero__visual">
+      <div class="porthole" data-porthole>
+        <svg class="porthole__svg" viewBox="0 0 600 600" role="img" aria-labelledby="pTitle">
+          <title id="pTitle">A living cross-section of a field: sky, crops, topsoil and deep soil with roots, crossed by a heartbeat line.</title>
+          <defs>
+            <clipPath id="pClip"><circle cx="300" cy="300" r="296"/></clipPath>
+            <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9EBFA"/><stop offset="1" stop-color="#8FD0F0"/></linearGradient>
+            <linearGradient id="gLeaf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B4D96A"/><stop offset="1" stop-color="#8DBE43"/></linearGradient>
+            <linearGradient id="gSoil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#94633F"/><stop offset="1" stop-color="#7A4F31"/></linearGradient>
+            <linearGradient id="gHumus" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5E3F2A"/><stop offset="1" stop-color="#3E2819"/></linearGradient>
+          </defs>
+          <g clip-path="url(#pClip)">
+            <g data-depth="0.15">
+              <rect x="-40" y="-40" width="680" height="260" fill="url(#gSky)"/>
+              <circle class="sun" cx="455" cy="105" r="38" fill="#FFD27A"/>
+              <circle class="sun-halo" cx="455" cy="105" r="62" fill="#FFE7B0" opacity=".45"/>
+              <g class="clouds" fill="#fff" opacity=".9">
+                <g class="cloud c1"><ellipse cx="120" cy="90" rx="46" ry="16"/><ellipse cx="146" cy="78" rx="28" ry="18"/></g>
+                <g class="cloud c2"><ellipse cx="330" cy="60" rx="36" ry="12"/><ellipse cx="350" cy="52" rx="20" ry="13"/></g>
+              </g>
+              <g class="birds" fill="none" stroke="#2B1B12" stroke-width="2" stroke-linecap="round" opacity=".55">
+                <path d="M230 130q6-6 12 0q6-6 12 0"/><path d="M262 116q4-4 8 0q4-4 8 0"/>
+              </g>
+            </g>
+            <g data-depth="0.35">
+              <rect x="-40" y="212" width="680" height="48" fill="url(#gLeaf)"/>
+              <g class="crops" data-crops></g>
+            </g>
+            <g data-depth="0.55">
+              <rect x="-40" y="260" width="680" height="170" fill="url(#gSoil)"/>
+              <g class="roots" data-roots fill="none" stroke="#F1DDBF" stroke-linecap="round"></g>
+              <g data-particles></g>
+            </g>
+            <g data-depth="0.75">
+              <rect x="-40" y="430" width="680" height="220" fill="url(#gHumus)"/>
+              <g fill="#2E1E14" opacity=".7">
+                <ellipse cx="120" cy="490" rx="30" ry="14"/><ellipse cx="420" cy="520" rx="40" ry="16"/><ellipse cx="300" cy="560" rx="22" ry="10"/><ellipse cx="520" cy="470" rx="18" ry="9"/><ellipse cx="200" cy="540" rx="14" ry="7"/>
+              </g>
+              <g class="worm"><path d="M330 470c10-8 20 8 30 0s20 8 30 0" fill="none" stroke="#C98A6B" stroke-width="7" stroke-linecap="round"/></g>
+            </g>
+            <path d="M-20 212H620M-20 260H620M-20 430H620" stroke="#fff" stroke-width="4" opacity=".95"/>
+            <path class="pulse-line" d="M-20 236H190l26-52 34 120 30-90 16 22H620" fill="none" stroke="#fff" stroke-width="9" stroke-linejoin="round" stroke-linecap="round" pathLength="1"/>
+          </g>
+          <circle cx="300" cy="300" r="296" fill="none" stroke="#2B1B12" stroke-opacity=".12" stroke-width="2"/>
+        </svg>
+
+        <div class="orbit" data-orbit>
+          <!-- chips are placed around the circle by JS -->
+          <button class="chip" type="button" style="--c:var(--leaf)" data-sym="N" data-name="Nitrogen" data-text="Drives leafy, green growth.">N</button>
+          <button class="chip" type="button" style="--c:var(--leaf)" data-sym="P" data-name="Phosphorus" data-text="Powers roots, flowering and grain fill.">P</button>
+          <button class="chip" type="button" style="--c:var(--leaf)" data-sym="K" data-name="Potassium" data-text="Strengthens stems and lifts crop quality.">K</button>
+          <button class="chip" type="button" style="--c:var(--clay)" data-sym="Zn" data-name="Zinc" data-text="One of India's most common soil gaps.">Zn</button>
+          <button class="chip" type="button" style="--c:var(--beet)" data-sym="pH" data-name="Soil pH" data-text="Decides which nutrients a crop can absorb.">pH</button>
+          <button class="chip" type="button" style="--c:var(--sky)" data-sym="S" data-name="Sulphur" data-text="Key for oilseeds and pulses.">S</button>
+          <button class="chip" type="button" style="--c:var(--beet)" data-sym="OC" data-name="Organic carbon" data-text="The living part of soil that holds moisture.">OC</button>
+          <button class="chip" type="button" style="--c:var(--clay)" data-sym="B" data-name="Boron" data-text="Needed for flowering and fruit set.">B</button>
+        </div>
+        <div class="readout" aria-live="polite">
+          <span class="readout__sym" data-readout-sym>18</span>
+          <span class="readout__txt"><b data-readout-name>parameters, one visit</b><span data-readout-text>Tap a nutrient on the ring.</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="scroll-cue" href="#how" aria-label="Scroll to how it works"><span></span></a>
+</section>
+
+<!-- ============ RECOGNITION MARQUEE ============ -->
+<section class="marquee" aria-label="Awards and partners">
+  <div class="marquee__track">
+    <ul>
+      <li><svg class="ic"><use href="#i-award"/></svg>Grassroot Innovator Award — Rashtrapati Bhawan 2026</li>
+      <li><svg class="ic"><use href="#i-award"/></svg>Best Startup Award — ICAR-IARI Pusa 2026</li>
+      <li><svg class="ic"><use href="#i-award"/></svg>FICCI Agri Startup Award 2025</li>
+      <li><svg class="ic"><use href="#i-award"/></svg>Startup Maharathi Winner — Startup Mahakumbh 2025</li>
+      <li><svg class="ic"><use href="#i-award"/></svg>Best Startup in Agriculture — Global Bio India 2024</li>
+      <li><svg class="ic"><use href="#i-award"/></svg>TiE Women Global Pitch Winner 2024</li>
+      <li><svg class="ic"><use href="#i-award"/></svg>Rising Star — STPI #SANGAM 2024</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ THE DIG: HOW IT WORKS ============ -->
+<section class="dig" id="how" aria-labelledby="digTitle" data-dig>
+  <div class="dig__sticky">
+    <div class="dig__bg" aria-hidden="true"></div>
+    <div class="container dig__inner">
+      <header class="dig__head">
+        <p class="eyebrow eyebrow--light"><span class="dot"></span><span data-i18n="how.eyebrow">How it works</span></p>
+        <h2 id="digTitle" class="h2" data-i18n="how.title">Dig a little deeper.</h2>
+        <p class="dig__sub">A test is only the first spadeful. Four phases build farmer capability, not dependency.</p>
+      </header>
+
+      <div class="dig__gauge" aria-hidden="true">
+        <div class="gauge__track"><span class="gauge__fill"></span><span class="gauge__tip"></span></div>
+        <ol class="gauge__marks"><li>0 cm</li><li>15</li><li>30</li><li>45</li><li>60 cm</li></ol>
+      </div>
+
+      <ol class="phases">
+        <li class="phase" style="--c:var(--leaf);--ci:var(--leaf-ink)" data-phase="0">
+          <span class="phase__num">01</span>
+          <div class="phase__body">
+            <p class="phase__tag"><span class="dot"></span>Diagnose</p>
+            <h3 class="phase__title">A lab that fits in a farmer's hands.</h3>
+            <p>On-field soil testing across 18 parameters in 45–60 minutes. Affordable, accessible and accurate — no waiting weeks for a far-away lab.</p>
+            <ul class="facts"><li>18 parameters</li><li>45–60 minutes</li><li>Geo-tagged samples</li></ul>
+          </div>
+          <svg class="phase__icon" aria-hidden="true"><use href="#ph-diagnose"/></svg>
+        </li>
+        <li class="phase" style="--c:var(--sky);--ci:var(--sky-ink)" data-phase="1">
+          <span class="phase__num">02</span>
+          <div class="phase__body">
+            <p class="phase__tag"><span class="dot"></span>Advise</p>
+            <h3 class="phase__title">Exact advice, in your language.</h3>
+            <p>Personalised crop advisory with exact input recommendations — which fertiliser, how much, and when — delivered in your language and tracked digitally.</p>
+            <ul class="facts"><li>Type · dose · timing</li><li>Hindi, Marathi, Telugu, Kannada, Tamil, English</li></ul>
+          </div>
+          <svg class="phase__icon" aria-hidden="true"><use href="#ph-advise"/></svg>
+        </li>
+        <li class="phase" style="--c:var(--clay);--ci:var(--clay-ink)" data-phase="2">
+          <span class="phase__num">03</span>
+          <div class="phase__body">
+            <p class="phase__tag"><span class="dot"></span>Monitor</p>
+            <h3 class="phase__title">See your soil change, season by season.</h3>
+            <p>Seasonal soil health tracking lets farmers see change over time — and lets organisations measure real, verifiable impact.</p>
+            <ul class="facts"><li>Year-on-year tracking</li><li>Live impact dashboards</li></ul>
+          </div>
+          <svg class="phase__icon" aria-hidden="true"><use href="#ph-monitor"/></svg>
+        </li>
+        <li class="phase" style="--c:var(--beet);--ci:var(--beet-ink)" data-phase="3">
+          <span class="phase__num">04</span>
+          <div class="phase__body">
+            <p class="phase__tag"><span class="dot"></span>Empower</p>
+            <h3 class="phase__title">Soil knowledge that stays in the village.</h3>
+            <p>Rural women trained as Soil Didis. Agri-retailers upskilled. Lasting community soil literacy, built from the ground up.</p>
+            <ul class="facts"><li>Soil Didis</li><li>Village clinics</li><li>Local income</li></ul>
+          </div>
+          <svg class="phase__icon" aria-hidden="true"><use href="#ph-empower"/></svg>
+        </li>
+      </ol>
+
+      <div class="dig__dots" role="group" aria-label="Jump to phase">
+        <button type="button" data-goto="0" style="--c:var(--leaf)"><span>Diagnose</span></button>
+        <button type="button" data-goto="1" style="--c:var(--sky)"><span>Advise</span></button>
+        <button type="button" data-goto="2" style="--c:var(--clay)"><span>Monitor</span></button>
+        <button type="button" data-goto="3" style="--c:var(--beet)"><span>Empower</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 18 PARAMETERS ============ -->
+<section class="section params" id="parameters" aria-labelledby="paramsTitle">
+  <div class="container">
+    <header class="section-head" data-reveal>
+      <p class="eyebrow"><span class="dot dot--clay"></span><span data-i18n="params.eyebrow">The test</span></p>
+      <h2 id="paramsTitle" class="h2"><span data-i18n="params.title">Eighteen readings. One visit.</span></h2>
+      <p class="section-lede">Every Soil Doctor report reads the full picture of your field — from the big three nutrients to the ratios that decide whether your crop can actually use them. Tap any tile.</p>
+    </header>
+
+    <div class="params__filters" role="group" aria-label="Filter parameters" data-reveal>
+      <button type="button" class="pill is-on" data-filter="all">All <span>18</span></button>
+      <button type="button" class="pill" data-filter="primary" style="--c:var(--leaf)"><i></i>Primary nutrients <span>3</span></button>
+      <button type="button" class="pill" data-filter="secondary" style="--c:var(--sky)"><i></i>Secondary nutrients <span>3</span></button>
+      <button type="button" class="pill" data-filter="micro" style="--c:var(--clay)"><i></i>Micronutrients <span>4</span></button>
+      <button type="button" class="pill" data-filter="property" style="--c:var(--beet)"><i></i>Soil properties <span>5</span></button>
+      <button type="button" class="pill" data-filter="ratio" style="--c:var(--sand)"><i></i>Nutrient ratios <span>3</span></button>
+    </div>
+
+    <div class="params__layout">
+      <div class="ptable" data-ptable aria-label="Soil parameters"></div>
+      <aside class="pdetail" aria-live="polite" data-pdetail>
+        <div class="pdetail__tile"><span data-pd-sym>pH</span></div>
+        <p class="pdetail__group" data-pd-group>Soil property</p>
+        <h3 class="pdetail__name" data-pd-name>Soil pH</h3>
+        <p class="pdetail__text" data-pd-text>How acidic or alkaline your soil is. It decides which nutrients your crop can actually absorb — the wrong pH can lock up fertiliser you already paid for.</p>
+        <p class="pdetail__note">All 18 are read on-field by the Soil Doctor device, with results in 45–60 minutes.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SAVINGS CALCULATOR ============ -->
+<section class="section calc" id="calculator" aria-labelledby="calcTitle">
+  <div class="container calc__grid">
+    <div class="calc__copy" data-reveal>
+      <p class="eyebrow"><span class="dot dot--leaf"></span><span data-i18n="calc.eyebrow">Savings estimator</span></p>
+      <h2 id="calcTitle" class="h2" data-i18n="calc.title">Stop guessing. Start saving.</h2>
+      <p class="section-lede">Most farmers apply fertiliser by habit. A soil test shows what your field already has — so you stop paying for what it doesn't need.</p>
+      <blockquote class="mini-quote">“Pehle andaz se daalte the DAP… Ab DAP band kiya, paise bachaaye.”<cite>— Satyendra Ji, wheat farmer, Bulandshahr</cite></blockquote>
+    </div>
+
+    <form class="calc__card" data-calc data-reveal onsubmit="return false">
+      <div class="field">
+        <label for="acres"><span data-i18n="calc.acres">Your land</span> <output data-acres-out>5 acres</output></label>
+        <input type="range" id="acres" min="1" max="100" value="5" step="1" data-acres>
+        <div class="range-scale" aria-hidden="true"><span>1</span><span>25</span><span>50</span><span>75</span><span>100</span></div>
+      </div>
+      <div class="field">
+        <label for="crop" data-i18n="calc.crop">Main crop</label>
+        <div class="select">
+          <select id="crop" data-crop>
+            <option>Wheat</option><option>Rice</option><option>Sugarcane</option><option>Cotton</option><option>Soybean</option><option>Maize</option><option>Groundnut</option><option>Pigeon pea</option><option>Vegetables</option><option>Fruit crops</option>
+          </select>
+        </div>
+      </div>
+      <fieldset class="field">
+        <legend data-i18n="calc.seasons">Seasons a year</legend>
+        <div class="seg" data-seasons>
+          <label><input type="radio" name="seasons" value="1"><span>1</span></label>
+          <label><input type="radio" name="seasons" value="2" checked><span>2</span></label>
+          <label><input type="radio" name="seasons" value="3"><span>3</span></label>
+        </div>
+      </fieldset>
+
+      <div class="calc__result">
+        <div class="coins" aria-hidden="true" data-coins></div>
+        <div>
+          <p class="calc__label" data-calc-label>Estimated fertiliser savings on 5 acres of wheat, per year</p>
+          <p class="calc__big"><span>₹</span><span data-calc-out>10,000</span></p>
+          <p class="calc__five">Over 5 years: <b data-calc-five>₹50,000</b></p>
+        </div>
+      </div>
+      <p class="calc__fine">Based on the ₹1,000 per acre average saving reported by Soil Doctor farmers. Your result depends on your soil and crop.</p>
+      <a href="#book" class="btn btn--leaf btn--block magnetic"><span data-i18n="calc.cta">Get my field tested</span><svg class="ic"><use href="#i-arrow"/></svg></a>
+    </form>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section services" id="services" aria-labelledby="svcTitle">
+  <div class="container">
+    <header class="section-head section-head--split" data-reveal>
+      <div>
+        <p class="eyebrow eyebrow--light"><span class="dot dot--sky"></span><span data-i18n="svc.eyebrow">What we offer</span></p>
+        <h2 id="svcTitle" class="h2" data-i18n="svc.title">Four ways into healthier soil.</h2>
+      </div>
+      <p class="section-lede">A device, a platform, a village clinic and a network of women entrepreneurs — each colour-coded so you can follow it across the site.</p>
+    </header>
+
+    <div class="svc" data-svc>
+      <article class="svc__panel is-open" style="--c:var(--leaf);--ci:var(--leaf-ink)">
+        <button class="svc__head" type="button" aria-expanded="true">
+          <span class="svc__no">01</span>
+          <span class="svc__name">Soil Doctor Device</span>
+          <span class="svc__plus"><svg class="ic"><use href="#i-plus"/></svg></span>
+        </button>
+        <div class="svc__body">
+          <div class="svc__media"><img src="https://soildoctor.in/wp-content/uploads/2025/11/Soil_doctor_device-min.png" alt="The portable Soil Doctor testing device" loading="lazy" onerror="this.parentElement.classList.add('is-empty')"></div>
+          <div class="svc__text">
+            <h3>A portable lab for the field.</h3>
+            <p>Compact, rugged and battery-operated, with SD card and app sync. Test soil and water where the crop grows.</p>
+            <ul class="ticks">
+              <li>Results in 45–60 minutes</li>
+              <li>Geo-tagged, cloud-connected samples</li>
+              <li>Satellite insights (NDVI, NDMI)</li>
+              <li>Buy, or rent from ₹500/month</li>
+            </ul>
+            <a href="#book" class="link-arrow" data-intent="Buy or rent a device">Buy or rent a device <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="svc__panel" style="--c:var(--sky);--ci:var(--sky-ink)">
+        <button class="svc__head" type="button" aria-expanded="false">
+          <span class="svc__no">02</span>
+          <span class="svc__name">Soil Intelligence Platform</span>
+          <span class="svc__plus"><svg class="ic"><use href="#i-plus"/></svg></span>
+        </button>
+        <div class="svc__body">
+          <div class="svc__media"><img src="https://soildoctor.in/wp-content/uploads/2025/11/Soil_intelligence-min.png" alt="Soil intelligence platform on screen" loading="lazy" onerror="this.parentElement.classList.add('is-empty')"></div>
+          <div class="svc__text">
+            <h3>From soil data to farmer wisdom.</h3>
+            <p>AI software that brings together soil tests, satellite imagery and weather to give crop- and region-specific recommendations.</p>
+            <ul class="ticks">
+              <li>Crop-specific advisory SOPs</li>
+              <li>Satellite layers: NDVI, LSWI, soil moisture</li>
+              <li>Biological and structural soil indicators</li>
+              <li>Impact dashboards for partners</li>
+            </ul>
+            <a href="#book" class="link-arrow" data-intent="Platform demo">Book a live demo <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="svc__panel" style="--c:var(--clay);--ci:var(--clay-ink)">
+        <button class="svc__head" type="button" aria-expanded="false">
+          <span class="svc__no">03</span>
+          <span class="svc__name">Soil Doctor Clinics</span>
+          <span class="svc__plus"><svg class="ic"><use href="#i-plus"/></svg></span>
+        </button>
+        <div class="svc__body">
+          <div class="svc__media"><img src="https://soildoctor.in/wp-content/uploads/2022/07/Soil-doctor-clinic1.png" alt="A village Soil Doctor Clinic" loading="lazy" onerror="this.parentElement.classList.add('is-empty')"></div>
+          <div class="svc__text">
+            <h3>A soil lab in every village.</h3>
+            <p>Village service centres run by agri-graduates, rural youth, agri-input retailers and FPO leaders — offering soil and water testing with advisory.</p>
+            <ul class="ticks">
+              <li>Tests from ₹300–₹500 per sample</li>
+              <li>Device, training, certification &amp; branding</li>
+              <li>Government-backed loans up to ₹20 lakh</li>
+              <li>Advisory platform and partner network</li>
+            </ul>
+            <a href="#book" class="link-arrow" data-intent="Start a Soil Doctor Clinic">Start a clinic <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="svc__panel" style="--c:var(--beet);--ci:var(--beet-ink)">
+        <button class="svc__head" type="button" aria-expanded="false">
+          <span class="svc__no">04</span>
+          <span class="svc__name">Soil Didi Program</span>
+          <span class="svc__plus"><svg class="ic"><use href="#i-plus"/></svg></span>
+        </button>
+        <div class="svc__body">
+          <div class="svc__media"><img src="https://soildoctor.in/wp-content/uploads/2025/11/Soil_doctor_didi-min.png" alt="A Soil Didi testing soil with a farmer" loading="lazy" onerror="this.parentElement.classList.add('is-empty')"></div>
+          <div class="svc__text">
+            <h3>Women-led soil entrepreneurs.</h3>
+            <p>Rural women trained to run soil micro-clinics from home or a local centre — with a kit, branding, training and ongoing support.</p>
+            <ul class="ticks">
+              <li>Earn ₹15,000–30,000 a month</li>
+              <li>Keep 80% of every test fee</li>
+              <li>Serve 4–6 nearby villages</li>
+              <li>No lock-in · WhatsApp &amp; peer support</li>
+            </ul>
+            <a href="#book" class="link-arrow" data-intent="Become a Soil Didi">Become a Soil Didi <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PATHS ============ -->
+<section class="section paths" id="paths" aria-labelledby="pathsTitle" data-paths>
+  <div class="container">
+    <header class="section-head" data-reveal>
+      <p class="eyebrow"><span class="dot dot--beet"></span><span data-i18n="paths.eyebrow">Find your path</span></p>
+      <h2 id="pathsTitle" class="h2" data-i18n="paths.title">Where do you stand in the field?</h2>
+    </header>
+
+    <div class="tabs" role="tablist" aria-label="Choose who you are" data-reveal>
+      <button role="tab" id="tab-farmers" aria-controls="pane-farmers" aria-selected="true" style="--c:var(--leaf)" data-tab="farmers">I'm a farmer</button>
+      <button role="tab" id="tab-partners" aria-controls="pane-partners" aria-selected="false" tabindex="-1" style="--c:var(--clay)" data-tab="partners">I run a business or FPO</button>
+      <button role="tab" id="tab-csr" aria-controls="pane-csr" aria-selected="false" tabindex="-1" style="--c:var(--sky)" data-tab="csr">I fund impact (CSR / NGO)</button>
+      <span class="tabs__ink" aria-hidden="true"></span>
+    </div>
+
+    <div class="panes">
+      <div class="pane is-active" role="tabpanel" id="pane-farmers" aria-labelledby="tab-farmers" style="--c:var(--leaf);--ci:var(--leaf-ink)">
+        <div class="pane__intro">
+          <h3>Test your soil, transform your farm.</h3>
+          <p>Know exactly what your soil needs — and stop paying for what it doesn't. Works for rice, wheat, maize, cotton, soybean, pigeon pea, groundnut, sugarcane, vegetables and fruit crops.</p>
+          <p class="tip"><b>Tip:</b> test about 60 days before sowing, so there's time to correct your soil.</p>
+          <a href="#book" class="btn btn--ink magnetic" data-intent="Book a soil test">Book a soil test <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+        <ol class="steps">
+          <li><b>Book a test</b><span>At a nearby clinic, with a Soil Didi, or a home visit (₹500 + travel).</span></li>
+          <li><b>Test on your field</b><span>18 parameters, read in under an hour.</span></li>
+          <li><b>Get your advice</b><span>Fertiliser type, quantity and timing — in your language.</span></li>
+          <li><b>Track every season</b><span>See your soil improve, year on year.</span></li>
+        </ol>
+      </div>
+
+      <div class="pane" role="tabpanel" id="pane-partners" aria-labelledby="tab-partners" style="--c:var(--clay);--ci:var(--clay-ink)" hidden>
+        <div class="pane__intro">
+          <h3>Partner with us to regenerate soil.</h3>
+          <p>Agri-input companies, retailers, FPOs, government bodies and research institutions can add soil testing to what they already do — and earn from it.</p>
+          <ul class="models">
+            <li>Retailer revenue model</li><li>Soil clinic model</li><li>Soil Didi model</li><li>MoU deployments</li><li>Grant-based pilots (3–6 months)</li>
+          </ul>
+          <a href="#book" class="btn btn--ink magnetic" data-intent="Start a Soil Doctor Clinic">Start a Soil Doctor Clinic <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+        <ol class="steps">
+          <li><b>Sign an MoU</b><span>Pick the model that fits your business.</span></li>
+          <li><b>Train your team</b><span>Hands-on training and certification.</span></li>
+          <li><b>Install device &amp; signage</b><span>Your shop becomes a recognised soil clinic.</span></li>
+          <li><b>Test, advise, earn</b><span>Soil and water tests, advisory and input linkages.</span></li>
+        </ol>
+      </div>
+
+      <div class="pane" role="tabpanel" id="pane-csr" aria-labelledby="tab-csr" style="--c:var(--sky);--ci:var(--sky-ink)" hidden>
+        <div class="pane__intro">
+          <h3>Regenerate soil. Create lasting impact.</h3>
+          <p>The CA-SHARP™ model combines the Soil Doctor device, the soil intelligence platform and a live impact dashboard — eligible under Schedule VII of the Companies Act, 2013.</p>
+          <ul class="models">
+            <li>Dashboard updated within 24 hours</li><li>DPDP Act, 2023 compliant</li><li>Annual CSR-2 ready report</li><li>Pilots for 1–2 clusters (~200–400 farmers)</li>
+          </ul>
+          <a href="#book" class="btn btn--ink magnetic" data-intent="Launch a CSR program">Launch a CSR program <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+        <ol class="steps steps--timeline">
+          <li><b>Weeks 1–2</b><span>MoU signed and program designed.</span></li>
+          <li><b>Weeks 3–4</b><span>Soil Didis and clinic operators hired and trained.</span></li>
+          <li><b>Weeks 5–6</b><span>Clinic infrastructure set up.</span></li>
+          <li><b>Week 7 onward</b><span>Farmer testing and AI advisory begin — first impact data around month 3.</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IMPACT CORES ============ -->
+<section class="section impact" id="impact" aria-labelledby="impactTitle">
+  <div class="container">
+    <header class="section-head section-head--center" data-reveal>
+      <p class="eyebrow eyebrow--light"><span class="dot dot--leaf"></span><span data-i18n="impact.eyebrow">Our impact</span></p>
+      <h2 id="impactTitle" class="h2" data-i18n="impact.title">Pulled from real fields.</h2>
+      <p class="section-lede">Each column is a soil core. Watch them fill.</p>
+    </header>
+    <ul class="cores" data-cores>
+      <li class="core" style="--c:var(--leaf);--fill:.92"><div class="core__tube"><span class="core__fill"></span></div><p class="core__num"><span data-count="50000">0</span>+</p><p class="core__lbl">Farmers reached</p></li>
+      <li class="core" style="--c:var(--clay);--fill:.6"><div class="core__tube"><span class="core__fill"></span></div><p class="core__num">₹<span data-count="1000">0</span></p><p class="core__lbl">Average savings per acre</p></li>
+      <li class="core" style="--c:var(--sky);--fill:.74"><div class="core__tube"><span class="core__fill"></span></div><p class="core__num"><span data-count="4000">0</span>+</p><p class="core__lbl">Soil tests done</p></li>
+      <li class="core" style="--c:var(--beet);--fill:.48"><div class="core__tube"><span class="core__fill"></span></div><p class="core__num"><span data-count="25">0</span>+</p><p class="core__lbl">Soil Didis trained</p></li>
+      <li class="core" style="--c:var(--sun);--fill:.4"><div class="core__tube"><span class="core__fill"></span></div><p class="core__num"><span data-count="7">0</span>+</p><p class="core__lbl">States active</p></li>
+      <li class="core" style="--c:#E9DFC9;--fill:1"><div class="core__tube"><span class="core__fill"></span></div><p class="core__num"><span data-count="100">0</span>%</p><p class="core__lbl">Digitally tracked</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ VOICES ============ -->
+<section class="section voices" id="voices" aria-labelledby="voicesTitle">
+  <div class="container">
+    <header class="section-head section-head--split" data-reveal>
+      <div>
+        <p class="eyebrow"><span class="dot dot--clay"></span><span data-i18n="voices.eyebrow">Voices from the field</span></p>
+        <h2 id="voicesTitle" class="h2" data-i18n="voices.title">In their own words.</h2>
+      </div>
+      <div class="toggle" role="group" aria-label="Quote language">
+        <button type="button" class="is-on" data-qlang="orig" aria-pressed="true">Original</button>
+        <button type="button" data-qlang="en" aria-pressed="false">English</button>
+      </div>
+    </header>
+
+    <div class="quotes" data-quotes>
+      <figure class="quote" style="--c:var(--leaf)" data-reveal>
+        <span class="quote__tag">Yield up 20%</span>
+        <blockquote>
+          <p data-orig>“Soil Doctor se meri gobhi ki paidavaar 20% zyada hui. Paise bhi bache aur zameen bhi sudhri.”</p>
+          <p data-en hidden>“With Soil Doctor my cabbage yield went up 20%. I saved money, and my land got better too.”</p>
+        </blockquote>
+        <figcaption><span class="avatar" aria-hidden="true">VS</span><span><b>Vikram Singh</b>Cabbage grower, Kanpur</span></figcaption>
+      </figure>
+      <figure class="quote" style="--c:var(--sky)" data-reveal>
+        <span class="quote__tag">Zinc gap fixed · 20% water saved</span>
+        <blockquote>
+          <p data-orig>“Test ke baad maloom pada ki meri mitti mein zinc ki kami thi. Ab zyada paani aur dawai kharch hone se bach gaya.”</p>
+          <p data-en hidden>“After the test I learned my soil was short of zinc. Now I no longer waste extra water and chemicals.”</p>
+        </blockquote>
+        <figcaption><span class="avatar" aria-hidden="true">SD</span><span><b>Savita Devi</b>Rice farmer, Bahraich</span></figcaption>
+      </figure>
+      <figure class="quote" style="--c:var(--clay)" data-reveal>
+        <span class="quote__tag">Stopped unneeded DAP</span>
+        <blockquote>
+          <p data-orig>“Pehle andaz se daalte the DAP. Jab Soil Doctor se test hua, pata chala phosphorus already zyada hai. Ab DAP band kiya, paise bachaaye aur kheti achhi ho gayi.”</p>
+          <p data-en hidden>“We used to apply DAP by guesswork. The Soil Doctor test showed phosphorus was already high. I stopped DAP, saved money, and my farming got better.”</p>
+        </blockquote>
+        <figcaption><span class="avatar" aria-hidden="true">SJ</span><span><b>Satyendra Ji</b>Wheat farmer, Bulandshahr</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="didis" data-reveal>
+      <p class="didis__label"><span class="dot dot--beet"></span>Soil Didi stories</p>
+      <div class="didi"><b>Ruby</b><span>Mehmoodpur, Barabanki (UP)</span><strong>₹17,500 earned</strong><small>Started January 2024</small></div>
+      <div class="didi"><b>Ranu</b><span>Sarsaul, Kanpur (UP)</span><strong>150+ tests</strong><small>in her first 15 days</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY / TIMELINE ============ -->
+<section class="section story" id="story" aria-labelledby="storyTitle">
+  <div class="container">
+    <header class="section-head section-head--split" data-reveal>
+      <div>
+        <p class="eyebrow"><span class="dot dot--sky"></span><span data-i18n="story.eyebrow">Our story</span></p>
+        <h2 id="storyTitle" class="h2" data-i18n="story.title">Born from the fields. Built for the farmer.</h2>
+      </div>
+      <p class="section-lede">Ekosight Technologies was founded by Dhiraj Choudhary (CEO) and Saumya Rawat (COO) with one aim: regenerate India's soil and empower every farmer. Drag the timeline.</p>
+    </header>
+  </div>
+  <div class="timeline" data-timeline tabindex="0" aria-label="Company timeline, scrollable">
+    <ol class="timeline__track">
+      <li class="tl" style="--c:var(--leaf)"><span class="tl__year">2021</span><h3>Company founded</h3><p>Ekosight Technologies incorporated on 29 September 2021 in New Delhi.</p></li>
+      <li class="tl" style="--c:var(--sky)"><span class="tl__year">2022</span><h3>Built in the lab</h3><p>Proprietary powdered reagent sachets for portable soil analysis. First prototype device built and tested.</p></li>
+      <li class="tl" style="--c:var(--clay)"><span class="tl__year">2023</span><h3>Into the field</h3><p>First on-ground pilot in Punjab and the first village Soil Doctor Clinics, with FPOs and agricultural institutions.</p></li>
+      <li class="tl" style="--c:var(--beet)"><span class="tl__year">2024–25</span><h3>Soil Didis &amp; scale</h3><p>Soil Didi Program launched. 100+ active clinics, 10+ national awards and a second office at the IARI Pusa campus.</p></li>
+      <li class="tl" style="--c:var(--sun)"><span class="tl__year">2026</span><h3>National recognition</h3><p>Grassroot Innovator Award at Rashtrapati Bhawan and the Best Startup Award at ICAR-IARI Pusa.</p></li>
+    </ol>
+  </div>
+  <div class="container">
+    <ul class="partners" aria-label="Partners" data-reveal>
+      <li>Agrikheti</li><li>Amber Crop Sciences</li><li>DeHaat</li><li>EF Polymer</li><li>IPL</li><li>Parmarth</li><li>Social Alpha</li><li>TCL</li><li>Uncompromised</li><li>Villgro</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section faq" id="faq" aria-labelledby="faqTitle">
+  <div class="container faq__grid">
+    <header class="section-head" data-reveal>
+      <p class="eyebrow"><span class="dot dot--leaf"></span>FAQ</p>
+      <h2 id="faqTitle" class="h2" data-i18n="faq.title">Questions, answered.</h2>
+      <label class="search">
+        <svg class="ic"><use href="#i-search"/></svg>
+        <span class="sr-only">Search questions</span>
+        <input type="search" placeholder="Search: rent, Didi, crops, CSR…" data-faq-search>
+      </label>
+      <p class="faq__empty" data-faq-empty hidden>No match. Call us on <a href="tel:+918150085009">+91 81500 85009</a>.</p>
+    </header>
+    <div class="faq__list" data-faq>
+      <details style="--c:var(--leaf)"><summary>How long does a soil test take?</summary><p>45–60 minutes, right on your field. The Soil Doctor device reads 18 parameters and the results are geo-tagged and saved securely.</p></details>
+      <details style="--c:var(--leaf)"><summary>When should I test my soil?</summary><p>Ideally about 60 days before sowing. That gives you time to correct deficiencies before the crop goes in. Seasonal testing lets you track change year on year.</p></details>
+      <details style="--c:var(--leaf)"><summary>Which crops and languages do you support?</summary><p>Rice, wheat, maize, cotton, soybean, pigeon pea, groundnut, sugarcane, vegetables such as cabbage, potato and tomato, and fruit crops. Advice is available in Hindi, Marathi, Telugu, Kannada, Tamil and English.</p></details>
+      <details style="--c:var(--leaf)"><summary>Can someone come to my farm?</summary><p>Yes. Home visits are ₹500 plus travel. For 50 or more tests, write to <a href="mailto:partnerships@soildoctor.in">partnerships@soildoctor.in</a> for bulk pricing.</p></details>
+      <details style="--c:var(--beet)"><summary>Can I become a Soil Didi and earn income?</summary><p>Yes. We train rural women as Soil Didis. You receive a Soil Doctor kit, training and marketing support. Soil Didis earn ₹15,000–30,000 a month from soil testing and advisory, keep 80% of each test fee, and there is no lock-in.</p></details>
+      <details style="--c:var(--clay)"><summary>Can I rent the device instead of buying it?</summary><p>Yes — rental starts at ₹500 a month. The device comes with a 1-year warranty with free repairs in the first year.</p></details>
+      <details style="--c:var(--clay)"><summary>How accurate is on-field testing?</summary><p>Device results are validated against NABL-accredited laboratory results for parity.</p></details>
+      <details style="--c:var(--sky)"><summary>Is your CSR program Schedule VII eligible?</summary><p>Yes. It is eligible under Schedule VII of the Companies Act, 2013. Data is collected with consent, reported with encryption and audit trails, and is compliant with India's DPDP Act, 2023.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOK / CONTACT ============ -->
+<section class="section book" id="book" aria-labelledby="bookTitle">
+  <div class="book__layers" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="container book__grid">
+    <div class="book__info" data-reveal>
+      <p class="eyebrow eyebrow--light"><span class="dot dot--leaf"></span><span data-i18n="book.eyebrow">Get started</span></p>
+      <h2 id="bookTitle" class="h2" data-i18n="book.title">Your soil is talking. Let's listen.</h2>
+      <p class="section-lede">Tell us a little about you and our team will call back to set things up.</p>
+      <ul class="contact">
+        <li><svg class="ic"><use href="#i-phone"/></svg><span><a href="tel:+918150085009">+91 81500 85009</a> · <a href="tel:+918884222218">+91 88842 22218</a></span></li>
+        <li><svg class="ic"><use href="#i-mail"/></svg><span><a href="mailto:hello@soildoctor.in">hello@soildoctor.in</a> · <a href="mailto:partnerships@soildoctor.in">partnerships@soildoctor.in</a></span></li>
+        <li><svg class="ic"><use href="#i-pin"/></svg><span><a href="https://maps.google.com/?q=ICAR-IARI+Pusa+New+Delhi+110012" target="_blank" rel="noopener">Ekosight Technologies, Pusa Krishi ZTM &amp; BPD Unit, ICAR-IARI, New Delhi 110012</a></span></li>
+        <li><svg class="ic"><use href="#i-clock"/></svg><span>Mon–Fri 9:00 AM–6:00 PM · Sat 9:00 AM–1:00 PM · Sun closed <em class="open-now" data-open-now></em></span></li>
+      </ul>
+    </div>
+
+    <form class="form" data-form novalidate data-reveal>
+      <div class="form__row">
+        <div class="ff">
+          <input id="fName" name="name" type="text" autocomplete="name" placeholder=" " required>
+          <label for="fName">Your name</label>
+          <small class="ff__err">Please enter your name.</small>
+        </div>
+        <div class="ff">
+          <input id="fPhone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder=" " required pattern="^(\+91[\s-]?)?[6-9]\d{9}$">
+          <label for="fPhone">Mobile number</label>
+          <small class="ff__err">Enter a 10-digit Indian mobile number.</small>
+        </div>
+      </div>
+      <div class="ff">
+        <input id="fPlace" name="place" type="text" autocomplete="address-level2" placeholder=" " required>
+        <label for="fPlace">Village / district &amp; state</label>
+        <small class="ff__err">Tell us where you are.</small>
+      </div>
+      <fieldset class="intent">
+        <legend>I want to…</legend>
+        <div class="intent__opts" data-intents>
+          <label style="--c:var(--leaf)"><input type="radio" name="intent" value="Book a soil test" checked><span>Book a soil test</span></label>
+          <label style="--c:var(--clay)"><input type="radio" name="intent" value="Start a Soil Doctor Clinic"><span>Start a clinic</span></label>
+          <label style="--c:var(--beet)"><input type="radio" name="intent" value="Become a Soil Didi"><span>Become a Soil Didi</span></label>
+          <label style="--c:var(--sky)"><input type="radio" name="intent" value="Partner / CSR"><span>Partner / CSR</span></label>
+        </div>
+      </fieldset>
+      <div class="ff">
+        <textarea id="fMsg" name="message" rows="3" placeholder=" "></textarea>
+        <label for="fMsg">Anything else? (crop, acres, questions)</label>
+      </div>
+      <button class="btn btn--leaf btn--block magnetic" type="submit"><span data-i18n="book.submit">Request a call back</span><svg class="ic"><use href="#i-arrow"/></svg></button>
+      <p class="form__fine">We only use your details to contact you about this request.</p>
+
+      <div class="form__done" data-form-done hidden>
+        <div class="sprout" aria-hidden="true"><svg viewBox="0 0 80 80"><path class="sp-stem" d="M40 72V36" stroke="#3F6B12" stroke-width="5" stroke-linecap="round" fill="none" pathLength="1"/><path class="sp-l" d="M40 44c-2-12-12-18-24-18 0 12 10 20 24 18z" fill="#6FA82F"/><path class="sp-r" d="M40 38c2-14 12-22 26-22 0 14-12 24-26 22z" fill="#8DBE43"/></svg></div>
+        <h3>Thank you, <span data-done-name></span>!</h3>
+        <p data-done-text>Your request is ready to send.</p>
+        <button type="button" class="link-arrow" data-form-reset>Send another request</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__strata" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a href="#top" class="brand brand--light" aria-label="Soil Doctor, back to top">
+        <svg class="brand__mark"><use href="#logo-mark"/></svg>
+        <span class="brand__text"><b>Soil Doctor</b><small>by ekosight</small></span>
+      </a>
+      <p>Transforming agriculture through soil intelligence. Helping farmers grow more with less, sustainably.</p>
+      <ul class="socials">
+        <li><a href="https://www.facebook.com/share/1D79yuZfQV/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/soildoctor.in" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/company/soil-doctor/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://x.com/hellosoildoctor" target="_blank" rel="noopener">X</a></li>
+        <li><a href="https://youtube.com/@hellosoildoctor" target="_blank" rel="noopener">YouTube</a></li>
+      </ul>
+    </div>
+    <nav class="footer__col" aria-label="Services">
+      <h3>Services</h3>
+      <a href="#services">Soil Doctor Device</a><a href="#services">Soil Intelligence Platform</a><a href="#services">Soil Doctor Clinics</a><a href="#services">Soil Didi Program</a>
+    </nav>
+    <nav class="footer__col" aria-label="Solutions">
+      <h3>Solutions</h3>
+      <a href="#paths" data-path-link="farmers">For farmers</a><a href="#paths" data-path-link="partners">For partners</a><a href="#paths" data-path-link="csr">For CSR</a><a href="https://soildoctor.in/find-a-clinic/">Find a clinic</a>
+    </nav>
+    <nav class="footer__col" aria-label="Company">
+      <h3>Company</h3>
+      <a href="#story">Our story</a><a href="https://soildoctor.in/blogs/">Blog</a><a href="https://soildoctor.in/shop/">Shop</a><a href="#book">Contact</a>
+    </nav>
+  </div>
+  <div class="container footer__base">
+    <p>© <span data-year>2026</span> Ekosight Technologies Pvt. Ltd. All rights reserved.</p>
+    <p><a href="https://soildoctor.in/privacy-policy/">Privacy policy</a> · <a href="https://soildoctor.in/terms-and-conditions/">Terms</a></p>
+  </div>
+  <p class="footer__giant" aria-hidden="true">Soil Doctor</p>
+</footer>
+
+<!-- Mobile thumb bar -->
+<div class="thumbbar" aria-label="Quick actions">
+  <a href="tel:+918150085009" class="thumbbar__call"><svg class="ic"><use href="#i-phone"/></svg>Call</a>
+  <a href="#book" class="thumbbar__book" data-i18n="cta.book">Book a soil test</a>
+</div>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
